@@ -61,3 +61,10 @@ nav a:hover { color: var(--primary-color); }
     nav a { margin: 0 0.5rem; }
     .hero h1 { font-size: 2rem; }
 }
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}

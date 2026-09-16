@@ -1,14 +1,5 @@
 [
-  {
-    "id": 1,
-    "title": "PCB Télémétrie & Sécurité",
-    "category": "elec",
-    "price": "45.00€",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-    "description": "Carte 4 couches avec MPU6500 et RF 433MHz. Idéale pour monitoring et sécurité.",
-    "badges": ["Nouveau", "ESP32-S3"],
-    "detailsLongs": "Conception sur-mesure sous KiCad (routage 4 couches). Intègre un microcontrôleur ESP32-S3, un accéléromètre MPU6500 pour la détection de mouvement, un module RF 433MHz, une régulation de tension step-down et une interface UART pour la récupération des données télémétriques."
-  },
+
   {
     "id": 2,
     "title": "Configuration FPV Long Range 7\"",
@@ -19,24 +10,16 @@
     "badges": ["Long Range", "DJI O4"],
     "detailsLongs": "Assemblage complet de quadricoptères 7 pouces. Intégration du système vidéo numérique DJI O4 Pro Air Unit et récepteur ExpressLRS. Comprend le paramétrage complet sous Betaflight, le tuning des PID et la préparation pour la stabilisation vidéo Gyroflow."
   },
+
   {
-    "id": 3,
-    "title": "Aile Volante FPV (LW-PLA)",
-    "category": "3d",
-    "price": "35.00€",
-    "image": "https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80",
-    "description": "Structure ultra-légère imprimée en 3D (modèle GASB ONE).",
-    "badges": ["Ultra-léger", "LW-PLA"],
-    "detailsLongs": "Impression 3D optimisée avec trancheur OrcaSlicer/Bambu Studio. Matériau LW-PLA pour un poids minimal. La structure est pensée pour accueillir un contrôleur de vol sous INAV, une télémétrie 4G via Raspberry Pi et intègre un mécanisme de largage par servomoteur."
-  },
-  {
-    "id": 4,
-    "title": "Filtre Actif Audio 3 Voies",
+    "id": 1,
+    "title": "Pack Li-ion FPV Sur-Mesure",
     "category": "elec",
-    "price": "25.00€",
-    "image": "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=600&q=80",
-    "description": "PCB nu, topologie Sallen-Key pour amplification. Routage optimisé.",
-    "badges": ["Audio", "KiCad"],
-    "detailsLongs": "Conception et simulation complète d'un circuit de filtre actif 3 voies et amplificateur de puissance utilisant la topologie Sallen-Key. Calcul précis des valeurs de composants et simulation de réponse en fréquence validée sous LTSpice."
+    "price": "À partir de 35.00€",
+    "image": "https://images.unsplash.com/photo-1620803513360-1e5f15d2a904?auto=format&fit=crop&w=600&q=80",
+    "description": "Assemblage par points de packs Li-ion pour drones FPV Long Range (18650 ou 21700).",
+    "badges": ["Sur-mesure", "Long Range"],
+    "isConfigurator": true,
+    "detailsLongs": "Configurez votre pack batterie idéal pour vos vols FPV. Assemblage professionnel par soudure par points avec nickel pur, isolation papier orgeat et gaine thermorétractable."
   }
 ]
