@@ -1,38 +1,42 @@
 [
   {
     "id": 1,
-    "title": "PCB Télémétrie (ESP32-S3)",
+    "title": "PCB Télémétrie & Sécurité",
     "category": "elec",
     "price": "45.00€",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
     "description": "Carte 4 couches avec MPU6500 et RF 433MHz. Idéale pour monitoring et sécurité.",
-    "badges": ["Nouveau", "Sur commande"]
+    "badges": ["Nouveau", "ESP32-S3"],
+    "detailsLongs": "Conception sur-mesure sous KiCad (routage 4 couches). Intègre un microcontrôleur ESP32-S3, un accéléromètre MPU6500 pour la détection de mouvement, un module RF 433MHz, une régulation de tension step-down et une interface UART pour la récupération des données télémétriques."
   },
   {
     "id": 2,
-    "title": "Propguards FPV 7 pouces",
-    "category": "3d",
-    "price": "15.00€",
-    "image": "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=300&q=80",
-    "description": "Protections d'hélices flexibles imprimées en TPU. Haute résistance aux chocs.",
-    "badges": ["TPU"]
+    "title": "Configuration FPV Long Range 7\"",
+    "category": "drone",
+    "price": "Sur devis",
+    "image": "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=600&q=80",
+    "description": "Montage et configuration complète sur base iFlight Chimera 7 Pro V1.",
+    "badges": ["Long Range", "DJI O4"],
+    "detailsLongs": "Assemblage complet de quadricoptères 7 pouces. Intégration du système vidéo numérique DJI O4 Pro Air Unit et récepteur ExpressLRS. Comprend le paramétrage complet sous Betaflight, le tuning des PID et la préparation pour la stabilisation vidéo Gyroflow."
   },
   {
     "id": 3,
-    "title": "Châssis Aile Volante FPV",
-    "category": "drone",
+    "title": "Aile Volante FPV (LW-PLA)",
+    "category": "3d",
     "price": "35.00€",
-    "image": "https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=300&q=80",
-    "description": "Structure ultra-légère imprimée en LW-PLA, prête pour contrôleur de vol INAV.",
-    "badges": ["Ultra-léger"]
+    "image": "https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80",
+    "description": "Structure ultra-légère imprimée en 3D (modèle GASB ONE).",
+    "badges": ["Ultra-léger", "LW-PLA"],
+    "detailsLongs": "Impression 3D optimisée avec trancheur OrcaSlicer/Bambu Studio. Matériau LW-PLA pour un poids minimal. La structure est pensée pour accueillir un contrôleur de vol sous INAV, une télémétrie 4G via Raspberry Pi et intègre un mécanisme de largage par servomoteur."
   },
   {
     "id": 4,
     "title": "Filtre Actif Audio 3 Voies",
     "category": "elec",
     "price": "25.00€",
-    "image": "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=300&q=80",
+    "image": "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=600&q=80",
     "description": "PCB nu, topologie Sallen-Key pour amplification. Routage optimisé.",
-    "badges": []
+    "badges": ["Audio", "KiCad"],
+    "detailsLongs": "Conception et simulation complète d'un circuit de filtre actif 3 voies et amplificateur de puissance utilisant la topologie Sallen-Key. Calcul précis des valeurs de composants et simulation de réponse en fréquence validée sous LTSpice."
   }
 ]

@@ -3,24 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterBtns = document.querySelectorAll('.filter-btn');
     let products = [];
 
-    // 1. Récupération des données depuis le fichier JSON
     fetch('catalogue.json')
         .then(response => response.json())
         .then(data => {
             products = data;
-            renderProducts(products); // On affiche tout au chargement
+            renderProducts(products);
         })
         .catch(error => console.error('Erreur lors du chargement du catalogue:', error));
 
-    // 2. Fonction pour créer et afficher les cartes HTML
     function renderProducts(items) {
-        grid.innerHTML = ''; // On vide la grille
+        grid.innerHTML = ''; 
         
         items.forEach(product => {
-            // Création des badges s'il y en a
             const badgesHTML = product.badges.map(badge => `<span class="badge">${badge}</span>`).join('');
             
-            // Construction de la carte
             const card = document.createElement('div');
             card.className = 'card';
             card.innerHTML = `
@@ -31,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="card-desc">${product.description}</p>
                     <div class="card-footer">
                         <span class="price">${product.price}</span>
-                        <a href="#contact" class="btn primary">Commander</a>
+                        <a href="produit.html?id=${product.id}" class="btn secondary">Voir les détails</a>
                     </div>
                 </div>
             `;
@@ -39,14 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Gestion des filtres
     filterBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            // Gérer la classe 'active' sur les boutons
             filterBtns.forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
 
-            // Filtrer le tableau
             const category = e.target.getAttribute('data-filter');
             if (category === 'all') {
                 renderProducts(products);
