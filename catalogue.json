@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "PCB Télémétrie (ESP32-S3)",
+    "category": "elec",
+    "price": "45.00€",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80",
+    "description": "Carte 4 couches avec MPU6500 et RF 433MHz. Idéale pour monitoring et sécurité.",
+    "badges": ["Nouveau", "Sur commande"]
+  },
+  {
+    "id": 2,
+    "title": "Propguards FPV 7 pouces",
+    "category": "3d",
+    "price": "15.00€",
+    "image": "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=300&q=80",
+    "description": "Protections d'hélices flexibles imprimées en TPU. Haute résistance aux chocs.",
+    "badges": ["TPU"]
+  },
+  {
+    "id": 3,
+    "title": "Châssis Aile Volante FPV",
+    "category": "drone",
+    "price": "35.00€",
+    "image": "https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=300&q=80",
+    "description": "Structure ultra-légère imprimée en LW-PLA, prête pour contrôleur de vol INAV.",
+    "badges": ["Ultra-léger"]
+  },
+  {
+    "id": 4,
+    "title": "Filtre Actif Audio 3 Voies",
+    "category": "elec",
+    "price": "25.00€",
+    "image": "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=300&q=80",
+    "description": "PCB nu, topologie Sallen-Key pour amplification. Routage optimisé.",
+    "badges": []
+  }
+]
