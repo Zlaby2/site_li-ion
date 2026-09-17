@@ -1,14 +1,26 @@
 [
 
   {
+    "id": 4,
+    "title": "Module ShutterLink (Contrôle GoPro/Action)",
+    "category": "drone",
+    "price": "14.90€",
+    "image": "images/shutterlink.jpg",
+    "description": "Module ESP32-C3 pré-flashé pour contrôler votre GoPro/DJI Action depuis votre radio via Betaflight.",
+    "badges": ["Nouveau", "GoPro", "Ultra-léger"],
+    "isConfigurator": false,
+    "detailsLongs": "Ne ratez plus jamais l'enregistrement de vos vols FPV ! Ce micro-module basé sur un ESP32-C3 SuperMini (moins de 2g) est livré pré-flashé avec le firmware open-source ShutterLink et pré-câblé. Il se connecte à un UART libre de votre contrôleur de vol (FC) et communique en Wi-Fi/Bluetooth avec votre caméra. Compatible Betaflight/INAV. Fonctionne avec GoPro (Hero 8 et +, Naked, Bones) et DJI Osmo Action. Livré sous gaine thermorétractable transparente. Boîtier de protection en TPU sur-mesure disponible sur simple demande (+5€)."
+  },
+
+  {
     "id": 2,
-    "title": "Configuration FPV Long Range 7\"",
+    "title": "Configuration et build FPV jusqu'a 7\"",
     "category": "drone",
     "price": "Sur devis",
     "image": "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=600&q=80",
-    "description": "Montage et configuration complète sur base iFlight Chimera 7 Pro V1.",
-    "badges": ["Long Range", "DJI O4"],
-    "detailsLongs": "Assemblage complet de quadricoptères 7 pouces. Intégration du système vidéo numérique DJI O4 Pro Air Unit et récepteur ExpressLRS. Comprend le paramétrage complet sous Betaflight, le tuning des PID et la préparation pour la stabilisation vidéo Gyroflow."
+    "description": "Montage et configuration complète selon vos exigence.",
+    "badges": ["freestyle","cinématique","Long Range", "HD", "analogique"],
+    "detailsLongs": "Assemblage complet de quadricoptères jusqu'a 7\"."
   },
 
   {
@@ -17,9 +29,21 @@
     "category": "elec",
     "price": "À partir de 35.00€",
     "image": "https://images.unsplash.com/photo-1620803513360-1e5f15d2a904?auto=format&fit=crop&w=600&q=80",
-    "description": "Assemblage par points de packs Li-ion pour drones FPV Long Range (18650 ou 21700).",
+    "description": "Assemblage par points de packs Li-ion pour drones FPV Long Range (21700 ou 18650 sur demande).",
     "badges": ["Sur-mesure", "Long Range"],
     "isConfigurator": true,
     "detailsLongs": "Configurez votre pack batterie idéal pour vos vols FPV. Assemblage professionnel par soudure par points avec nickel pur, isolation papier orgeat et gaine thermorétractable."
+  },
+
+  {
+    "id": 3,
+    "title": "impression TPU",
+    "category": "3d",
+    "price": "À partir de 5€",
+    "image": "https://images.unsplash.com/photo-1620803513360-1e5f15d2a904?auto=format&fit=crop&w=600&q=80",
+    "description": "impression TPU pour drone fpv",
+    "badges": ["Sur-mesure", "FPV"],
+    "isConfigurator": true,
+    "detailsLongs": "Impression de TPU pour vos drone fpv, support de caméra, protection de bras ..."
   }
 ]

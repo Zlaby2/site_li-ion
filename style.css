@@ -68,3 +68,17 @@ nav a:hover { color: var(--primary-color); }
     justify-content: center;
     gap: 0.5rem;
 }
+
+/* Style pour le logo image */
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.site-logo {
+    height: 40px; /* Tu pourras augmenter ou réduire cette valeur (ex: 30px ou 50px) */
+    width: auto;  /* Garde les bonnes proportions */
+    min-width: 40px;
+    object-fit: contain;
+}

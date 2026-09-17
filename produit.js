@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <h3 style="margin-bottom: 0.5rem;">Spécifications techniques :</h3>
                                 <p style="color: #cbd5e1; line-height: 1.8; margin-bottom: 2rem;">${product.detailsLongs}</p>
                                 
-                                <a href="mailto:ton-email@exemple.com?subject=Demande concernant l'article: ${product.title}" class="btn primary" style="width: 100%;">Me contacter pour cet article</a>
+                                <a href="mailto:flowfpv28@gmail.com?subject=Demande concernant l'article: ${product.title}" class="btn primary" style="width: 100%;">Me contacter pour cet article</a>
                             </div>
                         </div>
                     `;
@@ -238,7 +238,7 @@ Merci d'avance !`
                         );
                         
                         // Pense à remplacer l'adresse email par la tienne ici :
-                        orderBtn.href = `mailto:ton-email@exemple.com?subject=${subject}&body=${body}`;
+                        orderBtn.href = `mailto:flowfpv28@gmail.com?subject=${subject}&body=${body}`;
                     }
 
                     // Écouteurs d'événements
