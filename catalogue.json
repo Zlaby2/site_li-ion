@@ -9,7 +9,7 @@
     "description": "Module ESP32-C3 pré-flashé pour contrôler votre GoPro/DJI Action depuis votre radio via Betaflight.",
     "badges": ["Nouveau", "GoPro", "Ultra-léger"],
     "isConfigurator": false,
-    "detailsLongs": "Ne ratez plus jamais l'enregistrement de vos vols FPV ! Ce micro-module basé sur un ESP32-C3 SuperMini (moins de 2g) est livré pré-flashé avec le firmware open-source ShutterLink et pré-câblé. Il se connecte à un UART libre de votre contrôleur de vol (FC) et communique en Wi-Fi/Bluetooth avec votre caméra. Compatible Betaflight/INAV. Fonctionne avec GoPro (Hero 8 et +, Naked, Bones) et DJI Osmo Action. Livré sous gaine thermorétractable transparente. Boîtier de protection en TPU sur-mesure disponible sur simple demande (+5€)."
+    "detailsLongs": "Ne ratez plus jamais l'enregistrement de vos vols FPV ! Ce micro-module basé sur un ESP32-C3 SuperMini (moins de 2g) est livré pré-flashé avec le firmware open-source ShutterLink et pré-câblé. Il se connecte à un UART libre de votre contrôleur de vol (FC) et communique en Wi-Fi/Bluetooth avec votre caméra. Compatible Betaflight/INAV. Fonctionne avec GoPro (Hero 8 et +, Naked, Bones) et DJI Osmo Action. Livré sous gaine thermorétractable transparente.<br><br>- démarrer/arreter l'enregistrement via la radio<br>- record-on-arm<br>- télémétrie OSD"
   },
 
   {
