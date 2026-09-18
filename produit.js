@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     `;
                 } 
                 // SI C'EST LE CONFIGURATEUR DE BATTERIE
+                // SI C'EST LE CONFIGURATEUR DE BATTERIE
                 else {
                     container.innerHTML = `
                         <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: flex-start;">
@@ -85,6 +86,14 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <input type="number" id="pack-p" value="1" min="1" max="6" style="width: 100%; padding: 0.8rem; border-radius: 8px; background: var(--bg-color); color: white; border: 1px solid var(--border-color);">
                                     </div>
                                 </div>
+                                
+                                <div style="margin-bottom: 1rem;">
+                                    <label style="display: block; margin-bottom: 0.5rem;">Format d'assemblage</label>
+                                    <select id="shape-type" style="width: 100%; padding: 0.8rem; border-radius: 8px; background: var(--bg-color); color: white; border: 1px solid var(--border-color);">
+                                        <option value="0" data-name="Standard (Plat / Brique)">Standard (Plat / Brique) - Inclus</option>
+                                        <option value="3" data-name="Triangle (Sur-mesure)">Triangle (Sur-mesure) - +3.00€</option>
+                                    </select>
+                                </div>
 
                                 <div style="margin-bottom: 1rem;">
                                     <label style="display: block; margin-bottom: 0.5rem;">Connecteur</label>
@@ -117,6 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <span>Forfait Base (Main d'œuvre, Matériaux) :</span>
                                         <span>30.00€</span>
                                     </div>
+                                    <div style="display: flex; justify-content: space-between; font-size: 1rem; margin-bottom: 0.5rem; display: none;" id="row-shape">
+                                        <span>Option Format :</span>
+                                        <span id="calc-shape">0.00€</span>
+                                    </div>
                                     <div style="display: flex; justify-content: space-between; font-size: 1rem; margin-bottom: 0.5rem; display: none;" id="row-conn">
                                         <span>Option Connecteur :</span>
                                         <span id="calc-conn">0.00€</span>
@@ -142,13 +155,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     const customCellInput = document.getElementById('custom-cell-input');
                     const packS = document.getElementById('pack-s');
                     const packP = document.getElementById('pack-p');
+                    const shapeSelect = document.getElementById('shape-type');
                     const connSelect = document.getElementById('conn-type');
                     const bmsSelect = document.getElementById('bms-type');
                     
                     const spanCellCount = document.getElementById('cell-count');
                     const calcCells = document.getElementById('calc-cells');
+                    const calcShape = document.getElementById('calc-shape');
                     const calcConn = document.getElementById('calc-conn');
                     const calcBms = document.getElementById('calc-bms');
+                    const rowShape = document.getElementById('row-shape');
                     const rowConn = document.getElementById('row-conn');
                     const rowBms = document.getElementById('row-bms');
                     const calcTotal = document.getElementById('calc-total');
@@ -158,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         const cellPrice = parseFloat(cellSelect.value);
                         const isCustomCell = (cellPrice === 0);
                         
-                        // Gestion de l'affichage du champ "Autre référence"
                         if (isCustomCell) {
                             customCellInput.style.display = 'block';
                         } else {
@@ -169,15 +184,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         const p = parseInt(packP.value) || 0;
                         const totalCells = s * p;
                         
+                        const shapePrice = parseFloat(shapeSelect.value);
                         const connPrice = parseFloat(connSelect.value);
                         const bmsPrice = parseFloat(bmsSelect.value);
                         
-                        // Calculs
                         const cellsTotal = totalCells * cellPrice;
-                        const baseForfait = 30; // 30€ fixes (main d'oeuvre, nickel, scotch)
-                        const grandTotal = cellsTotal + baseForfait + connPrice + bmsPrice;
+                        const baseForfait = 30;
+                        const grandTotal = cellsTotal + baseForfait + shapePrice + connPrice + bmsPrice;
 
-                        // Affichage dynamique
                         spanCellCount.textContent = totalCells;
                         
                         if (isCustomCell) {
@@ -186,7 +200,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             calcCells.textContent = cellsTotal.toFixed(2) + "€";
                         }
                         
-                        // Gestion de l'affichage des lignes d'options
+                        if (shapePrice > 0) {
+                            rowShape.style.display = 'flex';
+                            calcShape.textContent = "+" + shapePrice.toFixed(2) + "€";
+                        } else {
+                            rowShape.style.display = 'none';
+                        }
+
                         if (connPrice > 0) {
                             rowConn.style.display = 'flex';
                             calcConn.textContent = "+" + connPrice.toFixed(2) + "€";
@@ -201,24 +221,22 @@ document.addEventListener('DOMContentLoaded', () => {
                             rowBms.style.display = 'none';
                         }
 
-                        // Affichage du total selon si c'est sur mesure ou non
                         if (isCustomCell) {
                             calcTotal.textContent = "À partir de " + grandTotal.toFixed(2) + "€";
                         } else {
                             calcTotal.textContent = grandTotal.toFixed(2) + "€";
                         }
 
-                        // Récupération du nom de la cellule pour l'email
                         let cellName = cellSelect.options[cellSelect.selectedIndex].getAttribute('data-name');
                         if (isCustomCell) {
                             const customName = customCellInput.value.trim();
                             cellName = customName !== "" ? customName : "Référence à définir";
                         }
 
+                        const shapeName = shapeSelect.options[shapeSelect.selectedIndex].getAttribute('data-name');
                         const connName = connSelect.options[connSelect.selectedIndex].getAttribute('data-name');
                         const bmsName = bmsSelect.options[bmsSelect.selectedIndex].getAttribute('data-name');
                         
-                        // Génération de l'email
                         const subject = encodeURIComponent(`Devis Pack Li-ion ${s}S${p}P`);
                         const body = encodeURIComponent(
 `Bonjour,
@@ -227,6 +245,7 @@ Je souhaite valider un devis pour la fabrication d'un pack batterie avec les car
 
 - Configuration : ${s}S${p}P (Total : ${totalCells} cellules)
 - Modèle choisi : ${cellName}
+- Format d'assemblage : ${shapeName}
 - Connecteur : ${connName}
 - BMS : ${bmsName}
 
@@ -237,19 +256,17 @@ Je suis d'accord avec les modalités (50% d'acompte pour le lancement de la comm
 Merci d'avance !`
                         );
                         
-                        // Pense à remplacer l'adresse email par la tienne ici :
                         orderBtn.href = `mailto:flowfpv28@gmail.com?subject=${subject}&body=${body}`;
                     }
 
-                    // Écouteurs d'événements
                     cellSelect.addEventListener('change', updatePrice);
                     customCellInput.addEventListener('input', updatePrice);
                     packS.addEventListener('input', updatePrice);
                     packP.addEventListener('input', updatePrice);
+                    shapeSelect.addEventListener('change', updatePrice);
                     connSelect.addEventListener('change', updatePrice);
                     bmsSelect.addEventListener('change', updatePrice);
 
-                    // Initialisation au chargement
                     updatePrice();
                 }
 
